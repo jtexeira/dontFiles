@@ -13,3 +13,7 @@ aurs() {
 za() {
 	zathura $1 & disown
 }
+
+f() {
+	nvim -u ~/.vimrc ~/dotfiles/$1
+}
