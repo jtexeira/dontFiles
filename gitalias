@@ -9,6 +9,8 @@ alias gcm='git checkout master'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 
+alias gclone='git clone git@github.com:'
+
 alias gps='git push'
 alias gpl='git pull'
 alias gst='git status'
