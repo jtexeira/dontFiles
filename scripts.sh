@@ -19,6 +19,7 @@ f() {
 }
 
 dontback() {
-	git -C $DOTFILES commit -am "Backup $(date +%d/%m/%y\ %R)" 
+	git -C $DOTFILES add -A
+	git -C $DOTFILES commit -m "Backup $(date +%d/%m/%y\ %R)" 
 	git -C $DOTFILES push
 }
