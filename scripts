@@ -17,3 +17,7 @@ za() {
 f() {
 	nvim -u ~/.vimrc ~/dotfiles/$1
 }
+
+dontback() {
+	git -C ~/dotfiles commit -am "Backup $(date +%d/%m/%y\ %R)"
+}
