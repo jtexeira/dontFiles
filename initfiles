@@ -1,2 +1,0 @@
-#!/bin/bash
-awk -F: '{system("ln -rsn $DOTFILES/"$1 " " $2)}' $DOTFILES/.locations
