@@ -19,7 +19,14 @@ f() {
 }
 
 dontback() {
-	git -C $DOTFILES add -A
-	git -C $DOTFILES commit -m "Backup $(date +%d/%m/%y\ %R)" 
+	git -C $DOTFILES commit -am "Backup $(date +%d/%m/%y\ %R)" 
 	git -C $DOTFILES push
+}
+
+dontadd() {
+	FPATH=$(readlink -f $1 | sed -r 's|'"$HOME"'|~|g')
+	echo $2:$FPATH >> $DOTFILES/.locations
+	mv $1 $DOTFILES/$2
+	ln -rsn $DOTFILES/$2 $1
+	git -C $DOTFILES add $2
 }

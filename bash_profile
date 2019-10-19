@@ -2,8 +2,8 @@
 # ~/.bash_profile
 #
 
-export TERMINAL=st
 export DOTFILES=~/dotfiles
+export TERMINAL=st
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 if [ "$(tty)" = "/dev/tty1" ]; then
