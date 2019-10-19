@@ -1,0 +1,5 @@
+config:~/.config/i3/config
+i3bar:~/.config/i3status/config
+bashrc:~/.bashrc
+Xresources:~/.Xresources
+xinitrc:~/.xinitrc
