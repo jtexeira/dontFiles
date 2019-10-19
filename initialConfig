@@ -1,0 +1,1 @@
+sed -ir 's|DOTFILES=.*|DOTFILES='"$(pwd | sed -r 's|'"$HOME"'|~|g')"'|g' .bash_profile
