@@ -16,7 +16,7 @@ gcl() {
 alias gps='git push'
 alias gpl='git pull'
 alias gst='git status'
-alias glog='git log --oneline --decorate --graph'
+alias glog='git log --decorate --graph --oneline --all'
 alias ga='git add'
 alias gaa='git add -A'
 

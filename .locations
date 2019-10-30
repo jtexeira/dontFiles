@@ -4,3 +4,4 @@ i3bar:~/.config/i3status/config
 Xresources:~/.Xresources
 xinitrc:~/.xinitrc
 bash_profile:~/.bash_profile
+:~/.config/zathura/zathurarc

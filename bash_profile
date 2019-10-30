@@ -4,6 +4,7 @@
 
 export DOTFILES=~/dotfiles
 export TERMINAL=st
+export LC_ALL=C; unset LANGUAGE
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 if [ "$(tty)" = "/dev/tty1" ]; then
