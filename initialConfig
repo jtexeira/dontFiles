@@ -1,4 +1,4 @@
 DOTF=$(pwd | sed -r 's|'"$HOME"'|~|g')
-sed -ir 's|DOTFILES=.*|DOTFILES='"$DOTF"'|g' bash_profile
+sed -ri 's|DOTFILES=.*|DOTFILES='"$DOTF"'|g' bash_profile
 export DOTFILES=$DOTF
 sh updatefiles

@@ -5,6 +5,8 @@ endif
 
 call plug#begin()
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 
 call plug#end()
