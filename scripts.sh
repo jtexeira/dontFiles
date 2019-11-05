@@ -15,5 +15,5 @@ za() {
 }
 
 f() {
-	nvim -u $DOTFILES/vimrc $(find $DOTFILES | grep $1)
+	nvim -u $DOTFILES/vimrc $1
 }
