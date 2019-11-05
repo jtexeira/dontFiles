@@ -5,3 +5,4 @@ Xresources:~/.Xresources
 xinitrc:~/.xinitrc
 bash_profile:~/.bash_profile
 zathurarc:~/.config/zathura/zathurarc
+inputrc:~/.inputrc
