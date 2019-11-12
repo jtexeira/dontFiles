@@ -4,6 +4,9 @@ dontback() {
 }
 
 dontadd() {
+	if ! [[ $2 ]]; then
+		2=$(echo $1 | sed -r 's|.*/(.)|\1|g');
+	fi
 	FPATH=$(readlink -f $1 | sed -r 's|'"$HOME"'|~|g')
 	echo $2:$FPATH >> $DOTFILES/.locations
 	mv $1 $DOTFILES/$2
