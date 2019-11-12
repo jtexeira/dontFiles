@@ -14,7 +14,7 @@ gcl() {
 }
 
 alias gps='git push'
-alias gpsup='git push --set-upstream origin $(git branch --show-current)
+alias gpsup='git push --set-upstream origin $(git branch --show-current)'
 alias gpl='git pull'
 alias gst='git status'
 alias glog='git log --decorate --graph --oneline --all'
