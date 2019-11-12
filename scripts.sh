@@ -3,6 +3,8 @@ aura() {
 	git clone https://aur.archlinux.org/$1
 	cd $1
 	makepkg -si
+	cd ..
+	rm -rf $1
 	popd >> /dev/null
 }
 
