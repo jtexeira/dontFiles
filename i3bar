@@ -31,6 +31,7 @@ battery all {
 	status_bat = ""
 	status_chr = "⚡ "
 	format_down = ""
+	last_full_capacity = true
 }
 
 disk "/" {
