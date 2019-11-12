@@ -14,6 +14,7 @@ gcl() {
 }
 
 alias gps='git push'
+alias gpsup='git push --set-upstream origin $(git branch --show-current)
 alias gpl='git pull'
 alias gst='git status'
 alias glog='git log --decorate --graph --oneline --all'
@@ -32,6 +33,6 @@ gls () {
 		LS=${LS/$CROPPED/$IDK}
 	done
 
-	echo -e '\033[0;36m'Branch:$(git branch | grep \* | cut -d ' ' -f2)'\033[0m'
+	echo -e '\033[0;36m'Branch:$(git branch --show-current)'\033[0m'
 	echo $LS
 }
