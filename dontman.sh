@@ -1,5 +1,8 @@
 dontback() {
-	git -C $DOTFILES commit -am "Backup $(date +%d/%m/%y\ %R)" 
+    if ! [[ $1 ]]; then
+        1=$(date +%d/%m/%y\ %R);
+    fi
+	git -C $DOTFILES commit -am "Backup $1" 
 	git -C $DOTFILES push
 }
 
