@@ -1,4 +1,9 @@
 DOTF=$(pwd | sed -r 's|'"$HOME"'|~|g')
 sed -ri 's|DOTFILES=.*|DOTFILES='"$DOTF"'|g' bash_profile
 export DOTFILES=$DOTF
+if ! [[ -f $DOTFILES/$HOSTNAME.local ]]; then
+    echo "Keyboard layout:"
+    read LAYOUT
+    echo '$LAYOUT='$LAYOUT >> $DOTFILES/$HOSTNAME.local;
+fi
 sh updatefiles
