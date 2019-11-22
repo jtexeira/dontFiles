@@ -10,6 +10,7 @@ alias gcam='git commit -am'
 alias gcm='git checkout master'
 alias gco='git checkout'
 alias gcb='git checkout -b'
+alias gpsup='git push origin $(git branch --show-current)'
 
 gcl() {
 	git clone git@github.com:$1
