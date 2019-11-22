@@ -2,6 +2,8 @@ alias g='git'
 
 alias gd='git diff'
 
+alias gwb='git stash; git checkout master; git stash pop'
+
 alias gc='git commit'
 alias gcam='git commit -am'
 
