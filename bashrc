@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 . $DOTFILES/$HOSTNAME.local
-for file in $DOTFILES/*.sh; do 
+for file in $DOTFILES/*.dont; do 
 	. $file;
 done
-PS1='[\u@\h \W]\$ '
+PS1='$($DOTFILES/ps1.sh) '
