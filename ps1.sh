@@ -1,1 +1,1 @@
-pwd | sed -r 's|'"$HOME"'|~|g;s/\/(.)\w+\//\/\1\//g'
+pwd | perl -ne 's|'"$HOME"'|~|g;s/(\/.)(\w+-\w+|\w+)(?=\/)/\1/g; print'
