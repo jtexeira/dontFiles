@@ -1,1 +1,2 @@
 export LAYOUT=gb
+export XSESSION=startx

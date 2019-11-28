@@ -1,0 +1,2 @@
+export LAYOUT=pt
+export XSESSION=nvidia-xrun
