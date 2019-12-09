@@ -1,3 +1,4 @@
+#!/bin/sh
 aura() {
 	pushd /tmp >> /dev/null
 	git clone https://aur.archlinux.org/$1
