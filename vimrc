@@ -12,4 +12,5 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set iskeyword-=_
 retab
