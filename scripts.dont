@@ -47,7 +47,7 @@ auru() {
 
     echo $FINAL \
         | tr ' ' '\n' \
-        | column -ts'>'
+        | column -ts'>' -N PKG,REMOTE,INSTALED
 }
 
 za() {
