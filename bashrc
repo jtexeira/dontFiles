@@ -9,4 +9,4 @@
 for file in $DOTFILES/*.dont; do 
 	. $file;
 done
-PS1='$(echo -e "\e[96m"$($DOTFILES/ps1.sh)"\e[39m") '
+PS1='\[\e[96m\]$($DOTFILES/ps1.sh)\[\e[39m\] '

@@ -1,4 +1,4 @@
 #!/bin/bash
-git -C $DOTFILES pull
+
 awk -F: '{system("ln -frsn $DOTFILES/"$1 " " $2)}' $DOTFILES/.locations
 . $DOTFILES/bashrc
