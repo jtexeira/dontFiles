@@ -1,7 +1,7 @@
 URxvt.font: xft:DejaVu Sans Mono:autohint=true:size=12
 *.scrollBar: false
 
-st.font: DejaVu Sans Mono-12;
+st.font: DejaVu Sans Mono-16;
 **foreground:   #fcfcfc
 !! **background:   #232629
 !**background: #000000

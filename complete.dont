@@ -14,5 +14,25 @@ _f() {
 	return
 }
 
+_work() {
+	local curw
+	local files
+	curw=${COMP_WORDS[COMP_CWORD]}
+	files=$(ls $HOME/Lab/ | grep '\-1920' | awk -F'-' '{print $1}')
+	COMPREPLY=( $(compgen -W "$files" -- $curw) )
+	return
+}
+
+_class() {
+	local curw
+	local files
+	curw=${COMP_WORDS[COMP_CWORD]}
+	files=$(ls $HOME/Lab/ | grep '\-classes' | awk -F'-' '{print $1}')
+	COMPREPLY=( $(compgen -W "$files" -- $curw) )
+	return
+}
+
 complete -F _za za
 complete -F _f f
+complete -F _work work
+complete -F _class class

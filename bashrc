@@ -9,4 +9,9 @@
 for file in $DOTFILES/*.dont; do 
 	. $file;
 done
-PS1='\[\e[96m\]$($DOTFILES/ps1.sh)\[\e[39m\] '
+
+if [[ -n $SSH_CLIENT ]]; then
+    PS1='\[\e[33m\]$($DOTFILES/ps1.sh)\[\e[39m\] '
+else
+    PS1='\[\e[96m\]$($DOTFILES/ps1.sh)\[\e[39m\] '
+fi

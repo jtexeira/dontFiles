@@ -40,3 +40,5 @@ gls () {
 	echo -e '\033[0;36m'Branch:$(git branch --show-current)'\033[0m'
 	echo $LS
 }
+
+alias gfi='firefox github.com/$(git remote get-url --push origin | sed -r "s/.*:(.*).git/\1/g")'
