@@ -11,7 +11,7 @@ for file in $DOTFILES/*.dont; do
 done
 
 if [[ -n $SSH_CLIENT ]]; then
-    PS1='\[\e[33m\]$($DOTFILES/ps1.sh)\[\e[39m\] '
+    PS1='\[\e[33m\][\h] $($DOTFILES/ps1.sh)\[\e[39m\] '
 else
     PS1='\[\e[96m\]$($DOTFILES/ps1.sh)\[\e[39m\] '
 fi
