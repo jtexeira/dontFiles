@@ -13,3 +13,14 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     pgrep i3 || $XSESSION 2> /dev/null
     clear
 fi
+
+if [[ -z $TMUX ]] && [[ -n $SSH_CLIENT ]]; then
+    echo 'Launch tmux? [Y/n]'
+    read bool
+    case $bool in
+        "y"|"Y"|"")
+            tmux new-session -A -s main
+            exit
+            ;;
+    esac
+fi
