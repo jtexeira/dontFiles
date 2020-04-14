@@ -16,11 +16,12 @@ fi
 
 if [[ -z $TMUX ]] && [[ -n $SSH_CLIENT ]]; then
     echo 'Launch tmux? [Y/n]'
-    read bool
+    read -r bool
     case $bool in
         "y"|"Y"|"")
             tmux new-session -A -s main
             exit
             ;;
     esac
+    unset bool
 fi
