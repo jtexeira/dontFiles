@@ -6,3 +6,4 @@ inputrc:~/.inputrc
 sxhkdrc:~/.config/sxhkd/sxhkdrc
 bspwmrc:~/.config/bspwm/bspwmrc
 polybar:~/.config/polybar/config
+zathurarc:~/.config/zathura/zathurarc
