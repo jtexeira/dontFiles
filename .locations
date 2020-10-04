@@ -1,8 +1,8 @@
-config:~/.config/i3/config
 bashrc:~/.bashrc
-i3bar:~/.config/i3status/config
 Xresources:~/.Xresources
 xinitrc:~/.xinitrc
 bash_profile:~/.bash_profile
-zathurarc:~/.config/zathura/zathurarc
 inputrc:~/.inputrc
+sxhkdrc:~/.config/sxhkd/sxhkdrc
+bspwmrc:~/.config/bspwm/bspwmrc
+polybar:~/.config/polybar/config

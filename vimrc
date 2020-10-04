@@ -58,3 +58,11 @@ function SetTexOpts()
 endfunction
 
 autocmd FileType coq inoremap ,for ∀
+set scrolloff=4
+set undodir=~/.cache/vimundo
+set undofile
+
+" Fast replace
+nnoremap s :s//g<Left><Left>
+nnoremap S :%s//g<Left><Left>
+vnoremap s :s//g<Left><Left>

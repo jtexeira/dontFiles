@@ -1,0 +1,104 @@
+super + Return
+         i3-sensible-terminal
+
+super + ctrl + Return
+         sh $DOTFILES/term_from_intellij.sh
+
+super+d
+         sh ~/.dmenu_run_history
+
+super + shift + r
+	pkill -USR1 -x sxhkd
+
+@Print             
+          scrot '%Y-%m-%d_$wx$h.png' -sf -e 'xclip -sel clip -t image/png $f && rm $f'
+
+shift + @Print       
+          scrot -s -e 'scrot-rename $f'
+
+super + @Print        
+          scrot -s -e 'mv $f /tmp/ && sxiv -b -g $wx$h -p /tmp/$f && rm /tmp/$f'
+
+XF86AudioPlay
+         playerctl play-pause
+
+XF86AudioStop
+         playerctl stop
+
+XF86AudioNext
+         playerctl next
+
+XF86AudioPrev
+         playerctl previous
+
+super + shift + space
+    bspc node -t \~floating
+
+super + f
+    bspc node -t \~fullscreen
+
+super + shift + q
+    bspc node -c
+
+super + {1-9,0}
+	bspc desktop -f {1-9,10}
+
+super + shift + {1-9,0}
+    bspc node -d '{1-9,10}' --follow
+
+super + control + {1-9,0}
+    bspc node -d '{1-9,10}'
+
+super + alt + {h,l}
+	bspc node --to-monitor {prev,next} --follow
+
+alt + Tab
+	bspc desktop -f last.occupied
+
+super + {_,shift +} Tab
+	bspc desktop -f {next,prev}.local.occupied
+
+super + e
+	bspc desktop --layout next
+
+super + r
+	bspc node $(bspc query --nodes --desktop | head -1) --circulate forward
+
+super + shift + e
+	bspc node $(bspc query --nodes --desktop | head -1) --equalize
+
+super + q ; {h,j,k,l}
+	bspc node --presel-dir \~{west,south,north,east}
+
+super + {_,shift +} apostrophe
+	bspc node -t {\~pseudo_tiled,tiled}
+
+super + i
+	bspc node $(bspc query --nodes --desktop | head -1) -g hidden
+
+super + {h,j,k,l}
+	dir={(west backward),(south backward),(north forward),(east forward)}; \
+	bspc node --focus $\{dir[0]\}.!floating
+
+super + shift + s
+    bspc node -g sticky
+
+super + shift + m
+    if marked=$(bspc query -N -n .marked); then \
+        bspc node --swap $marked ; \
+        bspc node $marked -g 'marked=off' ; \
+    else \
+        bspc node -g marked ; \
+    fi
+
+# expand a window by moving one of its side outward
+Escape + super + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+super + comma
+    bspc node --state pseudo_tiled; \
+    bspc node --resize bottom_right 50 800

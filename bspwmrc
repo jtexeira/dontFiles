@@ -1,0 +1,60 @@
+#!/bin/bash
+case "$(bspc query -M | wc -l)" in
+    1)
+        bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+        ;;
+    2)
+        bspc monitor -o eDP-1-1 DP-1-1
+        bspc monitor ^1 -d 3 4 5
+        bspc monitor ^2 -d 1 2 6 7 8 9 10
+        ;;
+    3)
+        bspc monitor -o eDP-1-1 HDMI-1-2 DP-1-1
+        bspc monitor DP-1-1 -d 1 2 4 5
+        bspc monitor HDMI-1-2 -d 3 6 7
+        bspc monitor eDP-1-1 -d 8 9 10
+        ;;
+    4)
+        bspc monitor ^1 -d 1
+        bspc monitor ^2 -d 2 3 4
+        bspc monitor ^3 -d 5 6 7
+        bspc monitor ^4 -d 8 9 10
+        ;;
+esac
+~/.fehbg
+
+bspc config window_gap           14
+bspc config border_width         1
+
+bspc config split_ratio          0.5
+bspc config remove_unplugged_monitors true
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
+bspc config bottom_padding          22
+
+xsetroot -cursor_name left_ptr
+bspc rule -a Sxiv state=floating
+bspc rule -a discord desktop=3
+bspc rule -a Zathura state=tiled
+bspc rule -a Wine state=pseudo_tiled
+bspc rule -a Rider state=pseudo_tiled
+bspc rule -a Steam state=pseudo_tiled
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
+bspc config pointer_follows_monitor true
+bspc config focused_border_color "#0BD961"
+
+if ! pgrep sxhkd
+then
+    sxhkd &
+else
+    pkill -USR1 -x sxhkd
+fi
+
+if ! pgrep polybar
+then
+    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        MONITOR=$m polybar --reload mystatus &
+    done
+fi
+[ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &

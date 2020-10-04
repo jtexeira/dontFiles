@@ -1,4 +1,4 @@
-URxvt.font: xft:DejaVu Sans Mono:autohint=true:size=12
+URxvt.font: xft:DejaVu Sans Mono:autohint=true:size=28
 *.scrollBar: false
 
 st.font: DejaVu Sans Mono-16;
