@@ -1,4 +1,4 @@
 #!/bin/bash
 
-awk -F: '{system("ln -frsn $DOTFILES/"$1 " " $2)}' $DOTFILES/.locations
+awk -F: '{system("mkdir -p $(dirname "$2"); ln -frsn $DOTFILES/"$1 " " $2)}' $DOTFILES/.locations
 . $DOTFILES/bashrc

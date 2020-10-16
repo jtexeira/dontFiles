@@ -1,0 +1,9 @@
+#!/bin/bash
+killall -q thonkbar lemonbar
+
+thonkbar |
+    lemonbar \
+        -p \
+        -f "pango:Droid Sans Mono Dotted:size=8" \
+        -b \
+        -B "#B3000000"

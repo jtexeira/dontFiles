@@ -7,3 +7,7 @@ sxhkdrc:~/.config/sxhkd/sxhkdrc
 bspwmrc:~/.config/bspwm/bspwmrc
 polybar:~/.config/polybar/config
 zathurarc:~/.config/zathura/zathurarc
+thonkbar/scripts:~/.config/thonkbar/scripts
+thonkbar/controls/brightness:~/.local/bin/brightness
+thonkbar/controls/volume:~/.local/bin/volume
+updatefiles:~/.local/bin/upfiles

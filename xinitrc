@@ -9,4 +9,5 @@ xrandr --output HDMI-1-2 --right-of eDP-1-1
 xrandr --output HDMI-1-2 --left-of DP-1-1
 xrandr --output DP-1-1 --primary
 wmname compiz
+thonkbar_daemon &
 exec bspwm -c ~/.config/bspwm/bspwmrc
