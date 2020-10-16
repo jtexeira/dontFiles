@@ -23,14 +23,14 @@ case "$(bspc query -M | wc -l)" in
 esac
 ~/.fehbg
 
-bspc config window_gap           14
+bspc config window_gap           10
 bspc config border_width         1
 
 bspc config split_ratio          0.5
 bspc config remove_unplugged_monitors true
 bspc config borderless_monocle   false
 bspc config gapless_monocle      false
-bspc config bottom_padding          22
+bspc config bottom_padding          12
 
 xsetroot -cursor_name left_ptr
 bspc rule -a Sxiv state=floating
