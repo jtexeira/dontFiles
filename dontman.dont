@@ -6,6 +6,13 @@ dontback() {
 	git -C $DOTFILES push
 }
 
+dontup() {
+	git -C $DOTFILES stash
+	git -C $DOTFILES pull --rebase
+	git -C $DOTFILES stash pop
+    sh $DOTFILES/updatefiles
+} 
+
 dontadd() {
 	if ! [[ $2 ]]; then
 		2=$(echo $1 | sed -r 's|.*/(.)|\1|g');
