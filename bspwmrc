@@ -21,7 +21,7 @@ case "$(bspc query -M | wc -l)" in
         bspc monitor ^4 -d 8 9 10
         ;;
 esac
-~/.fehbg
+$DOTFILES/scripts/wallpaper.sh
 
 bspc config window_gap           10
 bspc config border_width         1
@@ -51,10 +51,10 @@ else
     pkill -USR1 -x sxhkd
 fi
 
-if ! pgrep polybar
+if ! pgrep thonkbar_daemon
 then
     for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mystatus &
+        MONITOR=$m thonkbar_daemon --reload mystatus &
     done
 fi
 [ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &

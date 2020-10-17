@@ -4,7 +4,9 @@ za() {
 }
 
 f() {
-	nvim -u $DOTFILES/vimrc $DOTFILES/$1
+    nvim -u $DOTFILES/vimrc \
+        $DOTFILES/$(find $DOTFILES/* | \
+        sed "s|$DOTFILES/*||g;/.git/d" | fzf)
 }
 
 work() {

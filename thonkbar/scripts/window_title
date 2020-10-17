@@ -1,1 +1,5 @@
-xdotool getwindowfocus getwindowname
+#!/bin/bash
+while read -r line; do
+    WIN=$(xdotool getwindowfocus getwindowname)
+    echo %{F#0bd961}["$WIN"]%{F-}
+done < <(bspc subscribe report)

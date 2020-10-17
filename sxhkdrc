@@ -5,7 +5,7 @@ super + ctrl + Return
          sh $DOTFILES/term_from_intellij.sh
 
 super+d
-         sh ~/.dmenu_run_history
+         sh $DOTFILES/scripts/dmenu_run_history.sh
 
 super + shift + r
 	pkill -USR1 -x sxhkd
@@ -30,6 +30,24 @@ XF86AudioNext
 
 XF86AudioPrev
          playerctl previous
+
+XF86AudioRaiseVolume
+    volume +
+
+XF86AudioLowerVolume
+    volume -
+
+XF86AudioMute
+    volume mute
+
+XF86AudioMicMute
+    volume mute_mic
+
+XF86MonBrightnessUp
+    brightness +
+
+XF86MonBrightnessDown
+    brightness -
 
 super + shift + space
     bspc node -t \~floating
