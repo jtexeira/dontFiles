@@ -25,3 +25,4 @@ if [[ -z $TMUX ]] && [[ -n $SSH_CLIENT ]]; then
     esac
     unset bool
 fi
+
