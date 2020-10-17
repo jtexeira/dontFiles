@@ -26,3 +26,4 @@ if [[ -z $TMUX ]] && [[ -n $SSH_CLIENT ]]; then
     unset bool
 fi
 
+
