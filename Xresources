@@ -6,7 +6,7 @@ st.font: DejaVu Sans Mono-16;
 !! **background:   #232629
 !**background: #000000
 urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0200/a000
+urxvt*background: rgba:0000/0000/0800/a000
 **cursorColor:  #1abc9c
 
 ! black

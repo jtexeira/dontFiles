@@ -1,5 +1,5 @@
 super + Return
-         i3-sensible-terminal
+         urxvt
 
 super + ctrl + Return
          sh $DOTFILES/term_from_intellij.sh
