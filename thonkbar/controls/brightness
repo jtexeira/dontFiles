@@ -17,7 +17,7 @@ case "$1" in
     --block)
         xrandr |
             awk '/ connected/ && /[[:digit:]]x[[:digit:]].*+/{print $1}' |
-            grep -q "LVDS-1" \
+            grep -q "LVDS-1\|eDP-1" \
         || exit
 
         CURR_PERCENT="$(brightnessctl -m info | grep -Po "[0-9]*(?=%)")"
