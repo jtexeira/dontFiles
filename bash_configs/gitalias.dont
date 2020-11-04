@@ -41,6 +41,6 @@ gls () {
 	echo $LS
 }
 
-alias gfi='firefox github.com/$(git remote get-url --push origin | sed -r "s/.*?:(.*)(.git)?/\1/g")'
+alias gfi='firefox github.com/$(git remote get-url --push origin | sed -r "s/.*?:(.*)(\.git)?/\1/g")'
 
 alias gpsupr='gpsup && gfi'
