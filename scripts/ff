@@ -1,1 +1,7 @@
-firefox --new-tab duckduckgo.com
+#!/bin/bash
+
+if WID=$(xdotool search --name "Mozilla Firefox"); then
+    xdotool windowactivate "$WID"
+else
+    /usr/bin/firefox
+fi

@@ -2,7 +2,7 @@ super + Return
          st
 
 super + ctrl + Return
-         sh $DOTFILES/term_from_intellij.sh
+         sh $DOTFILES/scripts/term_from_term.sh
 
 super+d
          sh $DOTFILES/scripts/dmenu_run_history.sh
@@ -51,6 +51,9 @@ XF86MonBrightnessDown
 
 super + shift + space
     bspc node -t \~floating
+
+super + s
+        bspc node -t \~sticky
 
 super + f
     bspc node -t \~fullscreen
