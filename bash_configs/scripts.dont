@@ -10,7 +10,7 @@ f() {
 }
 
 work() {
-    cd $HOME/Lab/$1-1920
+    cd $HOME/Lab/$1-2021
 }
 
 class() {

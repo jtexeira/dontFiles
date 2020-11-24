@@ -18,7 +18,7 @@ _work() {
 	local curw
 	local files
 	curw=${COMP_WORDS[COMP_CWORD]}
-	files=$(ls $HOME/Lab/ | grep '\-1920' | awk -F'-' '{print $1}')
+	files=$(ls $HOME/Lab/ | grep '\-2021' | awk -F'-' '{print $1}')
 	COMPREPLY=( $(compgen -W "$files" -- $curw) )
 	return
 }
