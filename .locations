@@ -12,3 +12,4 @@ thonkbar/controls/brightness:~/.local/bin/brightness
 thonkbar/controls/volume:~/.local/bin/volume
 updatefiles:~/.local/bin/upfiles
 scripts/ff:~/.local/bin/ff
+coc-settings.json:~/.config/nvim/coc-settings.json
