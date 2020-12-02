@@ -4,5 +4,5 @@ alias v='nvim -u $DOTFILES/vimrc'
 alias cls=clear
 alias sudo='sudo '
 alias ':q'='exit'
-alias 'cpull'='rsync -truav search:Lab/ ~/Lab/'
-alias 'cpush'='rsync -truav ~/Lab/ search:Lab/'
+alias 'cpull'='rsync -truav --exclude 'target' --max-size=200m search:Lab/ ~/Lab/'
+alias 'cpush'='rsync -truav --exclude 'target' --max-size=200m ~/Lab/ search:Lab/'
