@@ -2,6 +2,9 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync 
     autocmd VimEnter * CocInstall rust-rls
+    autocmd VimEnter * CocInstall coc-java
+    autocmd VimEnter * CocInstall coc-clangd
+    autocmd VimEnter * CocInstall coc-json
 endif
 
 call plug#begin()

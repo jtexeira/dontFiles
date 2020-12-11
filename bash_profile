@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 
-export DOTFILES=~/.dotfiles
+export DOTFILES=~/dotfiles
 export TERMINAL=st
 export LC_ALL=C; unset LANGUAGE
 export VISUAL=nvim

@@ -1,5 +1,8 @@
-alias ls='ls --color=auto'
-alias l='ls --color=auto'
+alias ls='exa'
+alias l='exa'
+alias cat='bat'
+#alias ls='ls --color=auto'
+#alias l='ls --color=auto'
 alias v='nvim -u $DOTFILES/vimrc'
 alias cls=clear
 alias sudo='sudo '
