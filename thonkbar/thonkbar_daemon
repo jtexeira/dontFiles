@@ -4,6 +4,6 @@ killall -q thonkbar lemonbar
 thonkbar |
     lemonbar \
         -p \
-        -f "pango:Droid Sans Mono Dotted:size=8" \
+        -f "xft:DejaVu Sans Mono:autohint=true:size=10" \
         -b \
         -B "#B3000000"
