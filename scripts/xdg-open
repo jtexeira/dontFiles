@@ -1,1 +1,23 @@
-../../.dotfiles
+#!/bin/bash
+
+shopt -s extglob
+
+case $1 in
+    *.c|*.cpp|*.hpp|*.h|*.sh|*.hs|*.rs|*.cu|*.py|*.json|*.yaml|*.toml|*.txt|*.tex)
+        st -e nvim -u $DOTFILES/vimrc $1
+        ;;
+    *.png|*.jpg|*.jpeg)
+        feh $1
+        ;;
+    http*.pdf)
+        file=$(mktemp)
+        curl $1 > $file
+        zathura $file
+        ;;
+    http*)
+        firefox $1
+        ;;
+    *.pdf)
+        zathura $1
+        ;;
+esac
