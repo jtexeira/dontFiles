@@ -5,4 +5,5 @@ $DOTFILES/wallpaper.sh
 sxhkd &
 wmname compiz
 thonkbar_daemon &
+. "$DOTFILES"/local_configs/"$HOSTNAME".startup
 exec bspwm -c ~/.config/bspwm/bspwmrc
