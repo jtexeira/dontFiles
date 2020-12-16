@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-. $DOTFILES/local_configs/$HOSTNAME.local
+[ -f "$DOTFILES"/local_configs/"$HOSTNAME".local ] && . $DOTFILES/local_configs/$HOSTNAME.local
 for file in $DOTFILES/bash_configs/*.dont; do 
 	. $file;
 done
