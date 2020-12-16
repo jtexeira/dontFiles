@@ -49,6 +49,9 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     brightness -
 
+XF86Display
+    xrandr --auto
+
 super + shift + space
     bspc node -t \~floating
 

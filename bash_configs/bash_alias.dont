@@ -4,5 +4,7 @@
 alias cls=clear
 alias sudo='sudo '
 alias ':q'='exit'
+
 alias 'cpull'='rsync -truav --exclude 'target' --max-size=200m search:Lab/ ~/Lab/'
 alias 'cpush'='rsync -truav --exclude 'target' --max-size=200m ~/Lab/ search:Lab/'
+alias 'cmount'='sshfs search:Lab ~/remote_lab'

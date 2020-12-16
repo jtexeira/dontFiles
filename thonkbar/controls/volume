@@ -2,10 +2,12 @@
 case "$1" in
     +)
         pactl set-sink-volume @DEFAULT_SINK@ +5%
+        pactl set-sink-mute @DEFAULT_SINK@ 0
         pkill -SIGRTMIN+2 thonkbar
         ;;
     -)
         pactl set-sink-volume @DEFAULT_SINK@ -5%
+        pactl set-sink-mute @DEFAULT_SINK@ 0
         pkill -SIGRTMIN+2 thonkbar
         ;;
     mute)
