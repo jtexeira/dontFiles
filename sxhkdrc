@@ -126,3 +126,6 @@ super + alt + shift + {h,j,k,l}
 super + comma
     bspc node --state pseudo_tiled; \
     bspc node --resize bottom_right 50 800
+    
+alt + l
+    i3lock -fup win -i $DOTFILES/images/lock.png
