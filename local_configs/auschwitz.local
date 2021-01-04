@@ -1,4 +1,4 @@
 export LAYOUT=pt
 export XSESSION=nvidia-xrun
 . /opt/asdf-vm/asdf.sh
-msi-keyboard -m normal -c left,red,high -c middle,green,high -c right,blue,high
+#msi-keyboard -m normal -c left,red,high -c middle,green,high -c right,blue,high

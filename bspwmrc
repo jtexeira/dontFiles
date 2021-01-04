@@ -1,5 +1,5 @@
 #!/bin/bash
-case "$(bspc query -M | wc -l)" in
+case "$(xrandr --query | grep " connected" | wc -l)" in
     1)
         bspc monitor -d 1 2 3 4 5 6 7 8 9 10
         ;;
@@ -53,8 +53,6 @@ fi
 
 if ! pgrep thonkbar_daemon
 then
-    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m thonkbar_daemon --reload mystatus &
-    done
+    thonkbar_daemon $(xrandr --query | grep " connected" | wc -l ) &
 fi
 [ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &

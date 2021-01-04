@@ -5,6 +5,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     autocmd VimEnter * CocInstall coc-java
     autocmd VimEnter * CocInstall coc-clangd
     autocmd VimEnter * CocInstall coc-json
+    autocmd VimEnter * CocInstall coc-vimtex
 endif
 
 call plug#begin()
@@ -13,6 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -47,6 +49,7 @@ autocmd FileType tex call SetTexOpts()
 function SetTexOpts()
     map <leader>r :silent !pdflatex --shell-escape %:p > /dev/null &<Return>
     command! Re !pdflatex --shell-escape %:p
+    command! Wre w <bar> !pdflatex --shell-escape %:p
 
     inoremap ,tt \texttt{}<Space><++><Esc>T{i
     inoremap ,ve \verb!!<Space><++><Esc>T!i
@@ -64,6 +67,8 @@ autocmd FileType coq inoremap ,for ∀
 set scrolloff=4
 set undodir=~/.cache/vimundo
 set undofile
+
+command! Q qa
 
 " Fast replace
 nnoremap s :s//g<Left><Left>

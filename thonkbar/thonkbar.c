@@ -1,5 +1,5 @@
 #ifndef _GNU_SOURCE
-#define _GNU_SOURCE 1
+#define _GNU_SOURCE #include <cstddef>
 #endif
 
 #include <stdio.h>
@@ -11,6 +11,7 @@
 
 const char* DELIMITER = "|";
 const char* DELIMITER_COLOR = "#666666";
+size_t n_mon = 1;
 
 struct Block {
     pthread_mutex_t lock;
@@ -113,16 +114,18 @@ void draw_side(struct Block_Array block_arr, char* marker){
 }
 
 void draw_bar() {
-    if (BAR_STATE.right.n_blocks > 0)
-        draw_side(BAR_STATE.right, "r");
-    if (BAR_STATE.center.n_blocks > 0)
-        draw_side(BAR_STATE.center, "c");
-    if (BAR_STATE.left.n_blocks > 0)
-        draw_side(BAR_STATE.left, "l");
+    for(size_t i = 0; i < n_mon; i++) {
+        printf("  %%{S%lu} ", 1);
+        if (BAR_STATE.right.n_blocks > 0)
+            draw_side(BAR_STATE.right, "r");
+        if (BAR_STATE.center.n_blocks > 0)
+            draw_side(BAR_STATE.center, "c");
+        if (BAR_STATE.left.n_blocks > 0)
+            draw_side(BAR_STATE.left, "l");
+    }
+        printf("\n");
+        fflush(stdout);
 
-    printf("\n");
-
-    fflush(stdout);
 }
 
 void update_block(struct Block* block) {
@@ -248,7 +251,7 @@ void insert_block(enum BAR_AREA bar_area, char* block_comand, int delay){
 
     pthread_mutex_init(&block.lock, NULL);
 
-    
+
     if (delay >= 0){
         update_block(&block);
         signal(new_id, update_block_and_draw_bar);
@@ -261,8 +264,8 @@ void insert_block(enum BAR_AREA bar_area, char* block_comand, int delay){
         int rc = pthread_create(&thread, NULL, update_thread, (void *)new_id);
 
         if (rc){
-          printf("ERROR; return code from pthread_create() is %d\n", rc);
-       }
+            printf("ERROR; return code from pthread_create() is %d\n", rc);
+        }
     }
 
     if (delay < 0){
@@ -270,12 +273,13 @@ void insert_block(enum BAR_AREA bar_area, char* block_comand, int delay){
         int rc = pthread_create(&thread, NULL, update_continuous_thread, (void *)new_id);
 
         if (rc){
-          printf("ERROR; return code from pthread_create() is %d\n", rc);
-       }
+            printf("ERROR; return code from pthread_create() is %d\n", rc);
+        }
     }
 }
 
 int main (int argc, char** argv) {
+    if(argc > 1) n_mon = atoi(argv[1]);
     BAR_STATE.left = make(5);
     BAR_STATE.center = make(5);
     BAR_STATE.right = make(5);
