@@ -1,4 +1,4 @@
-[ -x "$(command -v exa)" ] && alias ls='exa' && alias l='exa' || alias ls='ls --color=auto' && alias l='ls --color=auto'
+[ -x "$(command -v exa)" ] && alias ls='exa -g' && alias l='exa -g' || alias ls='ls --color=auto' && alias l='ls --color=auto'
 [ -x "$(command -v bat)" ] && alias cat='bat'
 [ -x "$(command -v nvim)" ] && alias v='nvim -u $DOTFILES/vimrc' || alias v='vim'
 alias cls=clear
