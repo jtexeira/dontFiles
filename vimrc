@@ -10,6 +10,7 @@ endif
 
 call plug#begin()
 
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
