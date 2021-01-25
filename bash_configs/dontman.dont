@@ -1,8 +1,9 @@
 dontback() {
-    if ! [[ $1 ]]; then
-        1=$(date +%d/%m/%y\ %R);
+    yeet=$(date +%d/%m/%y\ %R)
+    if [[ $1 ]]; then
+        yeet=$1;
     fi
-	git -C $DOTFILES commit -am "Backup $1" 
+	git -C $DOTFILES commit -am "Backup $yeet" 
 	git -C $DOTFILES push
 }
 
