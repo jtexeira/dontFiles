@@ -17,6 +17,10 @@ class() {
     cd $HOME/Lab/$1-classes
 }
 
+L() {
+    cd $HOME/Lab$1
+}
+
 chpp() {
     nvim -u $DOTFILES/vimrc src/$1.cpp "+:vs include/$1.hpp"
 }
