@@ -18,9 +18,13 @@ class() {
 }
 
 L() {
-    cd $HOME/Lab$1
+    cd $HOME/Lab/$1
 }
 
 chpp() {
     nvim -u $DOTFILES/vimrc src/$1.cpp "+:vs include/$1.hpp"
+}
+
+cl() {
+    clear && cd $1 && ls
 }

@@ -1,6 +1,5 @@
 #!/bin/bash
 _acpi="$(acpi -t)"
-#Thermal 0: ok, 53.0 degrees C
 
 [ ! "$_acpi" ] && exit
 
@@ -13,9 +12,9 @@ echo "$stat"
 echo "$stat"
 
 case $(echo "$stat"" / 20" | bc) in
-  0) echo "#FF0000" ;;
-  1) echo "#FF8400" ;;
+  0) echo "#00FF00" ;;
+  1) echo "#AAFF00" ;;
   2) echo "#FFF700" ;;
-  3) echo "#AAFF00" ;;
-  *) echo "#00FF00" ;;
+  3) echo "#FF8400" ;;
+  *) echo "#FF0000" ;;
 esac
