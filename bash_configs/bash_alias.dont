@@ -9,9 +9,11 @@ alias ':q'='exit'
 alias 'ts'='tree src'
 
 alias 'cch'='cargo check'
+alias 'ccb'='cargo build'
 alias 'ccr'='cargo run'
 
 alias 'tmux'='tmux -u'
+alias 'texpdf'='pdflatex --shell-escape'
 
 alias 'cpull'='rsync -truav --exclude 'target' --exclude 'node_modules' --exclude 'deps' --max-size=200m search:Lab/ ~/Lab/'
 alias 'cpush'='rsync -truav --exclude 'target' --exclude 'node_modules' --exclude 'deps' --max-size=200m ~/Lab/ search:Lab/'

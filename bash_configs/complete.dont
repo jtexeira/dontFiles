@@ -1,7 +1,14 @@
 _za() {
 	local curw
 	curw=${COMP_WORDS[COMP_CWORD]}
-	COMPREPLY=( $(compgen -o plusdirs -A file -- $curw | grep .pdf) )
+	COMPREPLY=( $(find . -iregex "$curw"'.*?\.pdf$') )
+	return
+}
+
+_tex() {
+	local curw
+	curw=${COMP_WORDS[COMP_CWORD]}
+	COMPREPLY=( $(compgen -o plusdirs -A file -- $curw | grep .tex) )
 	return
 }
 
@@ -36,3 +43,4 @@ complete -F _za za
 complete -F _f f
 complete -F _work work
 complete -F _class class
+complete -F _tex texpdf

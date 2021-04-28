@@ -68,6 +68,7 @@ autocmd FileType coq inoremap ,for ∀
 set scrolloff=4
 set undodir=~/.cache/vimundo
 set undofile
+set title
 
 command! Q qa
 
