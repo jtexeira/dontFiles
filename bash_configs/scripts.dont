@@ -28,3 +28,9 @@ chpp() {
 cl() {
     clear && cd $1 && ls
 }
+
+modrs() {
+    mkdir "$1"
+    mv "$1.rs" "$1/mod.rs"
+    cd "$1"
+}

@@ -5,12 +5,14 @@ alias cls=clear
 alias cll='clear && ls -l'
 alias sudo='sudo '
 alias ':q'='exit'
+alias 't'='tree'
 
 alias 'ts'='tree src'
 
 alias 'cch'='cargo check'
 alias 'ccb'='cargo build'
 alias 'ccr'='cargo run'
+alias 'ccp'='cargo clippy -- -Dwarnings -A unused-imports'
 
 alias 'tmux'='tmux -u'
 alias 'texpdf'='pdflatex --shell-escape'
