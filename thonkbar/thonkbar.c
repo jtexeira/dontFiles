@@ -293,9 +293,14 @@ int main (int argc, char** argv) {
 
     //insert_block(left, "scripts/workspaces", 0);
     insert_block(left, "uptime -p", 60);
+<<<<<<< Updated upstream
     //insert_block(left, "scripts/fanspeed", 5);
     insert_block(left, "scripts/temps", 5);
     insert_block(left, "~/balance.sh", 60);
+=======
+    insert_block(left, "scripts/fanspeed", 5);
+    insert_block(left, "scripts/temps", 5);
+>>>>>>> Stashed changes
 
     insert_block(center, "scripts/window_title", -1);
 
