@@ -16,6 +16,10 @@ gcl() {
 	git clone git@github.com:$1.git
 }
 
+etux_gcl() {
+	git clone git@git.eurotux.com:$1.git
+}
+
 alias gps='git push'
 alias gpsup='git push --set-upstream origin $(git branch --show-current)'
 alias gpl='git pull'
@@ -42,5 +46,6 @@ gls () {
 }
 
 alias gfi='firefox github.com/$(git remote get-url --push origin | sed -r "s/.*?:(.*)(\.git)?/\1/g")'
+alias etux_gfi='firefox git.eurotux.com/$(git remote get-url --push origin | sed -r "s/.*?:(.*)(\.git)?/\1/g")'
 
 alias gpsupr='gpsup && gfi'
