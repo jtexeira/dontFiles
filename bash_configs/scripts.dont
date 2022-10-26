@@ -1,6 +1,6 @@
 #!/bin/sh
 za() {
-	zathura $1 & disown
+	zathura "$1" & disown
 }
 
 f() {
@@ -26,11 +26,39 @@ chpp() {
 }
 
 cl() {
-    clear && cd $1 && ls
+    clear 
+    [[ -n $1 ]] && cd $1 
+    ls
 }
 
 modrs() {
     mkdir "$1"
     mv "$1.rs" "$1/mod.rs"
     cd "$1"
+}
+
+x() {
+    [[ -n $1 ]] && cd $(find $1 -type d -not -path '*/\.*' | fzf || pwd) || cd $(find ~/etux -type d -not -path '*/\.*' | fzf || pwd)
+}
+
+aws-login() {
+    link=`aws-vault login --backend=kwallet -s -d 8h "$1"`
+    [[ $? == 0 ]] && container-launcher -n "$1" "$link"
+}
+
+todo() {
+    grep '#' ~/todo.md | sed 's/# //g'
+}
+
+todo_edit() {
+    nvim -u $DOTFILES/vimrc ~/todo.md
+}
+
+radio() {
+    echo Playing: $(grep $1 ~/radios | cut -d'\' -f1)
+    grep $1 ~/radios | cut -d'\' -f2 | xargs mpv --volume=25
+}
+
+tf_targets() {
+    grep -P "^(resource|module) " $1 | cut -d" " -f2,3 | sed 's/ /\./g;s/\"//g;' | awk '{print "-target "$0 " "}' | tr -d '\n' | sed -E 's/-target ([^.]+)\.[{]/-target module\.\1/g'
 }

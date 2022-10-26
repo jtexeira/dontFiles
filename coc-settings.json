@@ -8,7 +8,8 @@
       "rust",
       "java"
     ],
-    "clangd.path": "/home/hitler/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+    "clangd.path": "/home/jmt/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+
 
     "java.import.maven.enabled": true,
     "java.completion.enabled": true,
@@ -19,5 +20,21 @@
         "com",
         "org"
     ],
-    "java.format.settings.url": "/home/hitler/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
+    "java.format.settings.url": "/home/jmt/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
+    "java.configuration.runtimes": [
+  {
+    "name": "JavaSE-1.17",
+    "path": "/usr/lib/jvm/java-17-openjdk-17.0.3.0.7-1.fc36.x86_64"
+  }],
+    "languageserver": {
+		"terraform": {
+			"command": "terraform-lsp",
+			"filetypes": [
+				"terraform",
+				"tf"
+			],
+			"initializationOptions": {},
+			"settings": {}
+		}
+	}
 }

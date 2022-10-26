@@ -1,6 +1,6 @@
 [ -x "$(command -v exa)" ] && alias ls='exa' && alias l='exa' || (alias ls='ls --color=auto' && alias l='ls --color=auto')
 [ -x "$(command -v bat)" ] && alias cat='bat -p'
-[ -x "$(command -v nvim)" ] && alias v='nvim -u $DOTFILES/vimrc' || alias v='vim'
+[ -x "$(command -v nvim)" ] && alias v='nvim -u $DOTFILES/vimrc' && alias vim='nvim -u $DOTFILES/vimrc' || alias v='vim'
 alias cls=clear
 alias cll='clear && ls -l'
 alias sudo='sudo '
@@ -21,3 +21,9 @@ alias 'cpull'='rsync -truav --progress --exclude 'target' --exclude 'node_module
 alias 'cpush'='rsync -truav --progress --exclude 'target' --exclude 'node_modules' --exclude 'deps' --max-size=200m ~/Lab/ search:Lab/'
 alias 'cmount'='sshfs search:Lab ~/remote_lab'
 alias 'sshh'='ssh search -t ssh home -t'
+
+alias 'aws-exec'='aws-vault exec'
+
+alias ':r'='. ~/.bashrc'
+
+alias 'eff'='effort ~/.effort-times/$(date +%b | tr "[:upper:]" "[:lower:]")'

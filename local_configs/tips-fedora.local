@@ -1,0 +1,7 @@
+export LAYOUT=pt
+export SSH_INSCRIBE_GENKEY_TYPE=ed25519
+etux_gcl() {
+    git clone git@git.eurotux.com:$1.git
+}
+alias etux_gfi='firefox git.eurotux.com/$(git remote get-url --push origin | sed -r "s/.*?:(.*)(\.git)?/\1/g")'
+alias yumi='sudo yum install'

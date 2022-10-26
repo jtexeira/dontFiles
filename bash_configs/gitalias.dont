@@ -2,12 +2,12 @@ alias g='git'
 
 alias gd='git diff'
 
-alias gwb='git stash; git checkout master; git pull; git stash pop'
+alias gwb='git stash; git checkout master; git pull; git stash apply'
 
 alias gc='git commit'
 alias gcam='git commit -am'
 
-alias gcm='git checkout master'
+alias gcm='git checkout master 2> /dev/null || git checkout main 2> /dev/null'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gpsup='git push origin $(git branch --show-current)'
@@ -24,6 +24,9 @@ alias gst='git status'
 alias glog='git log --decorate --graph --oneline --all'
 alias ga='git add'
 alias gaa='git add -A'
+
+alias gstash='git stash'
+alias gappl='git stash apply'
 
 alias grhh='git reset --hard HEAD'
 

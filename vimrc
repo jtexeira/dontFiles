@@ -6,6 +6,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     autocmd VimEnter * CocInstall coc-clangd
     autocmd VimEnter * CocInstall coc-json
     autocmd VimEnter * CocInstall coc-vimtex
+    autocmd VimEnter * CocInstall coc-powershell
 endif
 
 call plug#begin()
@@ -69,10 +70,22 @@ set scrolloff=4
 set undodir=~/.cache/vimundo
 set undofile
 set title
+set mouse=
 
 command! Q qa
+command! Cd CocList diagnostics
 
 " Fast replace
 nnoremap s :s//g<Left><Left>
 nnoremap S :%s//g<Left><Left>
 vnoremap s :s//g<Left><Left>
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
