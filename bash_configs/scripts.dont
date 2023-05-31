@@ -26,8 +26,8 @@ chpp() {
 }
 
 cl() {
-    clear 
-    [[ -n $1 ]] && cd $1 
+    clear
+    [[ -n $1 ]] && cd $1
     ls
 }
 
@@ -42,8 +42,11 @@ x() {
 }
 
 aws-login() {
-    link=`aws-vault login --backend=kwallet -s -d 8h "$1"`
-    [[ $? == 0 ]] && container-launcher -n "$1" "$link"
+    while [ "$#" -gt 0 ]; do
+        link=`aws-vault login --backend=kwallet -s -d 8h "$1"`
+        [[ $? == 0 ]] && container-launcher -n "$1" "$link"
+        shift
+    done
 }
 
 todo() {
@@ -59,6 +62,46 @@ radio() {
     grep $1 ~/radios | cut -d'\' -f2 | xargs mpv --volume=25
 }
 
+texpdf() {
+    echo $1 | entr -cp pdflatex --shell-escape /_
+}
+
 tf_targets() {
     grep -P "^(resource|module) " $1 | cut -d" " -f2,3 | sed 's/ /\./g;s/\"//g;' | awk '{print "-target "$0 " "}' | tr -d '\n' | sed -E 's/-target ([^.]+)\.[{]/-target module\.\1/g'
+}
+
+rmline() {
+    local file line
+
+    file="$1"
+    line="$2"
+
+    if [ -z "$file" ]; then
+        err "missing file to remove"
+        return 1
+    fi
+
+    if [ -z "$line" ]; then
+        line="${file##*:}"
+        file="${file%:*}"
+    fi
+
+    if ! [ -e "$file" ]; then
+        err "file to remove doesn't exist"
+        return 1
+    fi
+
+    if [ -z "$line" ]; then
+        err "missing line to remove"
+        return 1
+    fi
+
+    ed -s "$file" <<-EOF
+${line}d
+wq
+EOF
+}
+
+rgv() {
+    v $(rg -l $1) "+/$1"
 }

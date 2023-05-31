@@ -5,3 +5,6 @@ etux_gcl() {
 }
 alias etux_gfi='firefox git.eurotux.com/$(git remote get-url --push origin | sed -r "s/.*?:(.*)(\.git)?/\1/g")'
 alias yumi='sudo yum install'
+export TF_PLUGIN_CACHE_DIR=$HOME/.cache/terraform
+export YKMAN_OATH_CREDENTIAL_NAME="AWS etux-root:jmt@eurotux"
+export AWS_VAULT_PROMPT=ykman

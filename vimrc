@@ -7,7 +7,12 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     autocmd VimEnter * CocInstall coc-json
     autocmd VimEnter * CocInstall coc-vimtex
     autocmd VimEnter * CocInstall coc-powershell
+    autocmd VimEnter * CocInstall coc-sh
+    autocmd VimEnter * CocInstall coc-pyright
 endif
+
+set cmdheight=0
+set showbreak=↪\
 
 call plug#begin()
 
@@ -17,6 +22,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'lervag/vimtex'
+Plug 'github/copilot.vim'
+Plug 'f-person/git-blame.nvim'
+Plug 'junegunn/fzf'
 
 call plug#end()
 
@@ -69,7 +77,6 @@ autocmd FileType coq inoremap ,for ∀
 set scrolloff=4
 set undodir=~/.cache/vimundo
 set undofile
-set title
 set mouse=
 
 command! Q qa
@@ -89,3 +96,5 @@ inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$/

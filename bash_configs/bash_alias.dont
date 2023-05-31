@@ -15,7 +15,6 @@ alias 'ccr'='cargo run'
 alias 'ccp'='cargo clippy -- -Dwarnings -A unused-imports'
 
 alias 'tmux'='tmux -u'
-alias 'texpdf'='pdflatex --shell-escape'
 
 alias 'cpull'='rsync -truav --progress --exclude 'target' --exclude 'node_modules' --exclude 'deps' --max-size=200m search:Lab/ ~/Lab/'
 alias 'cpush'='rsync -truav --progress --exclude 'target' --exclude 'node_modules' --exclude 'deps' --max-size=200m ~/Lab/ search:Lab/'

@@ -43,10 +43,12 @@ _vault_profile() {
 	local curw
 	local files
 	curw=${COMP_WORDS[COMP_CWORD]}
-	files=$(aws-vault list | cut -f1 -d' ' | grep -v = | grep -v Profile | grep -vE '^-$')
+	files=$(aws-vault --completion-bash login)
 	COMPREPLY=( $(compgen -W "$files" -- $curw) )
 	return
 }
+
+command -v aws-vault >/dev/null && eval "$(aws-vault --completion-script-bash)"
 
 complete -F _za za
 complete -F _f f

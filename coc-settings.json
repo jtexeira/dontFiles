@@ -8,7 +8,7 @@
       "rust",
       "java"
     ],
-    "clangd.path": "/home/jmt/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
 
 
     "java.import.maven.enabled": true,
@@ -23,7 +23,7 @@
     "java.format.settings.url": "/home/jmt/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
     "java.configuration.runtimes": [
   {
-    "name": "JavaSE-1.17",
+    "name": "JavaSE-17",
     "path": "/usr/lib/jvm/java-17-openjdk-17.0.3.0.7-1.fc36.x86_64"
   }],
     "languageserver": {
@@ -36,5 +36,8 @@
 			"initializationOptions": {},
 			"settings": {}
 		}
-	}
+	},
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": true
+
 }
