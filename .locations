@@ -14,3 +14,6 @@ updatefiles:~/.local/bin/upfiles
 scripts/ff:~/.local/bin/ff
 scripts/xdg-open:~/.local/bin/xdg-open
 coc-settings.json:~/.config/nvim/coc-settings.json
+waybar:~/.config/waybar
+swaylock:~/.config/swaylock
+hypr:~/.config/hypr

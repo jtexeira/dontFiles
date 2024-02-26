@@ -105,3 +105,8 @@ EOF
 rgv() {
     v $(rg -l $1) "+/$1"
 }
+
+client() {
+    cd $HOME/etux/clients/$1
+}
+

@@ -39,6 +39,15 @@ _class() {
 	return
 }
 
+_client() {
+	local curw
+	local files
+	curw=${COMP_WORDS[COMP_CWORD]}
+	files=$(ls $HOME/etux/clients | awk -F'-' '{print $1}')
+	COMPREPLY=( $(compgen -W "$files" -- $curw) )
+	return
+}
+
 _vault_profile() {
 	local curw
 	local files
@@ -54,6 +63,7 @@ complete -F _za za
 complete -F _f f
 complete -F _work work
 complete -F _class class
+complete -F _client client
 complete -F _tex texpdf
 complete -C '/usr/local/bin/aws_completer' aws
 complete -C /usr/bin/terraform terraform
