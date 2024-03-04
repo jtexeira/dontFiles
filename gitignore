@@ -1,0 +1,8 @@
+*.ignore*
+*.log
+*.aux
+*.lof
+*.lot
+*.out
+*.toc
+.terraform/

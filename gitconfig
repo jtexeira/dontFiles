@@ -1,0 +1,17 @@
+[user]
+	email = jmt@eurotux.com
+	name = João Teixeira
+[core]
+	excludesFile = ~/.gitignore
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true
+[push]
+    autoSetupRemote = true
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
