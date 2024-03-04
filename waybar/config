@@ -1,0 +1,120 @@
+{
+    "height": 10,
+    "layer": "top",
+    "position": "bottom",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "mpris", "pulseaudio", "battery", "network#wifi", "network#vpn", "idle_inhibitor"],
+
+    "network#wifi": {
+        "interface": "wlp3s0",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "",
+        "max-length": 50,
+        "on-click": "kitty -e 'nmtui'"
+    },
+    "network#vpn": {
+        "interface": "tunetvpnbrg",
+        "format-ethernet": "ETVPN ",
+        "format-disconnected": "",
+        "max-length": 50,
+        "on-click": "kitty -e 'nmtui'"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 10,
+        "spacing": 10
+    },
+    "clock": {
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "format": "{:%a %d/%m %H:%M}",
+        "actions": {
+            "on-scroll-up"  : "shift_up",
+            "on-scroll-down": "shift_down"
+        },
+        "calendar": {
+            "mode"          : "month",
+            "weeks-pos"     : "left",
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "format": {
+                 "months":     "<span color='#ffead3'><b>{}</b></span>",
+                 "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                 "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                 "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                 "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "0% {icon} ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "amixer set Capture toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    },
+    "custom/scratchpad-indicator": {
+        "format-text": "{}hi",
+        "return-type": "json",
+        "interval": 3,
+        "exec": "~/.local/bin/scratchpad-indicator 2> /dev/null",
+        "exec-if": "exit 0",
+        "on-click": "hyprland 'scratchpad show'",
+        "on-click-right": "hyprland 'move scratchpad'"
+    },
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+    "mpris": {
+        "format": "{player_icon} {status_icon} {artist} - {title}",
+        "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+        "max-length": 50,
+        "player-icons": {
+             "default": "",
+             "mpv": ""
+        },
+        "status-icons": {
+             "paused": "⏸︎",
+             "playing": "⏵︎"
+        },
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        // "ignored-players": ["firefox"]
+    }
+}
+
