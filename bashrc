@@ -24,6 +24,7 @@ fi
 [ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
 [ -f "$DOTFILES/z.ignore/z.sh" ] && . $DOTFILES/z.ignore/z.sh
 export AWS_VAULT_BACKEND=kwallet
+export SSH_ASKPASS=ksshaskpass
 
 alias hh=hstr                    # hh to be alias for hstr
 export HSTR_CONFIG=hicolor       # get more colors
