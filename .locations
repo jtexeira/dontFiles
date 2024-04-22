@@ -19,3 +19,4 @@ swaylock:~/.config/swaylock
 hypr:~/.config/hypr
 gitignore:~/.gitignore
 gitconfig:~/.gitconfig
+alacritty.toml:~/.config/alacritty/alacritty.toml
