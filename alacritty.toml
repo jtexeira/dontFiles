@@ -48,3 +48,8 @@ white = '#63686d'
 
 [mouse]
 hide_when_typing = true
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Super | Shift"

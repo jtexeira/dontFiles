@@ -26,3 +26,5 @@ alias 'aws-exec'='aws-vault exec'
 alias ':r'='. ~/.bashrc'
 
 alias 'eff'='effort ~/.effort-times/$(date +%b | tr "[:upper:]" "[:lower:]")'
+alias '..'='cd ..'
+alias '...'='cd ../..'
