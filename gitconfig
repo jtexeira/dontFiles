@@ -1,6 +1,7 @@
 [user]
 	email = jmt@eurotux.com
 	name = João Teixeira
+	signingkey = /home/jmt/.ssh/id_ed25519.pub
 [core]
 	excludesFile = ~/.gitignore
 [init]
@@ -15,3 +16,7 @@
 	prompt = false
 [alias]
 	d = difftool
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh

@@ -1,3 +1,4 @@
+# vim: set filetype=sh :
 #!/bin/sh
 za() {
 	zathura "$1" & disown
@@ -43,10 +44,30 @@ x() {
 
 aws-login() {
     while [ "$#" -gt 0 ]; do
-        link=`aws-vault login --backend=kwallet -s -d 8h "$1"`
+        REGION=""
+        case $1 in
+            -r)
+                shift
+                REGION="--region $1"
+                shift
+            ;;
+        esac
+        link=`aws-vault login --backend=kwallet -s -d 8h "$1" $REGION`
         [[ $? == 0 ]] && container-launcher -n "$1" "$link"
         shift
     done
+}
+
+aws-exec() {
+    REGION=""
+    case $1 in
+        -r)
+            shift
+            REGION="--region $1"
+            shift
+        ;;
+    esac
+    aws-vault exec $REGION $@
 }
 
 todo() {
