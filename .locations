@@ -21,3 +21,4 @@ gitignore:~/.gitignore
 gitconfig:~/.gitconfig
 alacritty.toml:~/.config/alacritty/alacritty.toml
 hyprcwd:~/.local/bin/hyprcwd
+scripts/cuffs:~/.local/bin/cuffs
