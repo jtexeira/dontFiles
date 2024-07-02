@@ -21,6 +21,7 @@ rename(){
 script_name="$(basename "$0")"
 
 file="$(date +'screenshot_%d%h%Y-%Hh%Mm%Ss')"
+file="$HOME/Pictures/$file"
 
 if [[ "$XDG_SESSION_TYPE" = wayland ]]; then
     wayland=1
