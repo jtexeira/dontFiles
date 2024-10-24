@@ -26,8 +26,10 @@ fi
 export AWS_VAULT_BACKEND=pass
 export AWS_VAULT_PASS_PREFIX=aws/
 export SSH_ASKPASS=ksshaskpass
+export SUDO_ASKPASS=/usr/bin/ksshaskpass
 
 export LC_ALL=en_GB.UTF-8
+export TERM=xterm
 
 # HSTR configuration - add this to ~/.bashrc
 alias hh=hstr                    # hh to be alias for hstr

@@ -20,3 +20,5 @@
 	gpgsign = true
 [gpg]
 	format = ssh
+[safe]
+	directory = /home/jmt/etux/clients/mcoutinho/mnt

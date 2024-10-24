@@ -45,14 +45,20 @@ x() {
 aws-login() {
     while [ "$#" -gt 0 ]; do
         REGION=""
+        DURATION="8h"
         case $1 in
             -r)
                 shift
                 REGION="--region $1"
                 shift
             ;;
+            -d)
+                shift
+                DURATION="$1"
+                shift
+            ;;
         esac
-        link=`aws-vault login --backend=kwallet -s -d 8h "$1" $REGION`
+        link=`aws-vault login --backend=kwallet -s -d $DURATION "$1" $REGION`
         [[ $? == 0 ]] && container-launcher -n "$1" "$link"
         shift
     done
