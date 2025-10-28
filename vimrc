@@ -22,11 +22,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'lervag/vimtex'
-Plug 'github/copilot.vim'
+Plug 'zbirenbaum/copilot.lua'
 Plug 'f-person/git-blame.nvim'
 Plug 'junegunn/fzf'
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
+
+lua require("copilot").setup()
 
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set iskeyword-=_
@@ -74,6 +79,12 @@ function SetTexOpts()
     inoremap ,bfi \begin{figure}[H]<CR><CR>\end{figure}<Return><++><Esc>kki<Tab>\centering<CR><Tab>\includegraphics{}<CR>\caption{<++>}<Esc>k$i
     inoremap ,beg \begin{<++>}<Esc>yyp0fbcwend<Esc>O<Tab><++><Esc>k0<Esc>/<++><Enter>"_c4l
 endfunction
+
+autocmd FileType terraform call SetTerraformOpts()
+function SetTerraformOpts()
+    autocmd BufWrite *.tf :TerraformFmt
+endfunction
+
 
 autocmd FileType coq inoremap ,for ∀
 set scrolloff=4

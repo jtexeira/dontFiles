@@ -137,3 +137,6 @@ client() {
     cd $HOME/etux/clients/$1
 }
 
+aws-acc() {
+    grep 'role_arn.*'"$1" -B5 ~/.aws/config | grep '\[' | cut -d" " -f2 | tr -d '\]'
+}
